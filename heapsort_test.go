@@ -47,6 +47,14 @@ func TestHeapSortInt(t *testing.T) {
 			},
 			want: []int{0, 0, 0},
 		},
+		{
+			name: "[5] Boundary Case, negative integers in set",
+			args: args{
+				array:   []int{-5, -6, -6, -4, -3, -10, 1, 10},
+				reverse: false,
+			},
+			want: []int{-10, -6, -6, -5, -4, -3, 1, 10},
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
